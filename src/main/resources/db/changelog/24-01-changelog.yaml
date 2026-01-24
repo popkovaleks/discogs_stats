@@ -1,0 +1,92 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1769243937439-1
+      author: popko
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_artists
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+            tableName: artists
+  - changeSet:
+      id: 1769243937439-2
+      author: popko
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_release
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: discogs_id
+                  type: BIGINT
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: year
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: artist_id
+                  type: BIGINT
+            tableName: release
+  - changeSet:
+      id: 1769243937439-3
+      author: popko
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: pk_users
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  name: discogs_name
+                  type: VARCHAR(255)
+              - column:
+                  name: role
+                  type: SMALLINT
+            tableName: users
+  - changeSet:
+      id: 1769243937439-4
+      author: popko
+      objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: artist_id
+            baseTableName: release
+            constraintName: FK_RELEASE_ON_ARTIST
+            referencedColumnNames: id
+            referencedTableName: artists
+
