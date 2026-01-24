@@ -1,12 +1,13 @@
 databaseChangeLog:
   - changeSet:
-      id: 1769243937439-1
+      id: 1769269724706-1
       author: popko
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
         - createTable:
             columns:
               - column:
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
@@ -18,13 +19,14 @@ databaseChangeLog:
                   type: VARCHAR(255)
             tableName: artists
   - changeSet:
-      id: 1769243937439-2
+      id: 1769269724706-2
       author: popko
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
         - createTable:
             columns:
               - column:
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
@@ -49,13 +51,14 @@ databaseChangeLog:
                   type: BIGINT
             tableName: release
   - changeSet:
-      id: 1769243937439-3
+      id: 1769269724706-3
       author: popko
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:
         - createTable:
             columns:
               - column:
+                  autoIncrement: true
                   constraints:
                     nullable: false
                     primaryKey: true
@@ -79,7 +82,7 @@ databaseChangeLog:
                   type: SMALLINT
             tableName: users
   - changeSet:
-      id: 1769243937439-4
+      id: 1769269724706-4
       author: popko
       objectQuotingStrategy: QUOTE_ONLY_RESERVED_WORDS
       changes:

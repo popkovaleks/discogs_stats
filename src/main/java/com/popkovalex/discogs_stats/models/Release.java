@@ -12,8 +12,7 @@ import lombok.Setter;
 public class Release {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "release_id_seq")
-    @SequenceGenerator(name = "realease_id_seq", sequenceName = "release_id_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private Long discogsId;
