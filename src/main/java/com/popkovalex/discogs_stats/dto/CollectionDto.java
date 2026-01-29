@@ -1,16 +1,13 @@
 package com.popkovalex.discogs_stats.dto;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.List;
 
-@Setter
 @Getter
-public class ResponseFromDiscogsDto {
+@Setter
+public class CollectionDto {
 
-    private PaginationDto pagination;
     private List<ReleaseResponseDto> releases;
-
 }
